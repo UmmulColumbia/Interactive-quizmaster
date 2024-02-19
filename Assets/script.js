@@ -18,20 +18,35 @@ var clearHighscoresEl = document.querySelector("#clear-highscores");
 
 
 
-var timer = 15;
+var timer = 20;
 var timerInterval;
 
 var question = [
   {
-    question: "this is not a character in harry potter",
-    choices: ["harry", "hermione", "ron", "bugs bunny"],
-    answer: "bugs bunny",
+    question: "What is JavaScript?",
+    choices: ["A programming language", "A database management system", "A markup language", "An operating system"],
+    answer: "A programming language",
   },
   {
-    question: "how many harry potter movies are there",
-    choices: ["1", "2", "3", "8"],
-    answer: "8",
+    question: "How do you declare a variable in JavaScript?",
+    choices: ["var", "variable", "v", "let"],
+    answer: "var",
   },
+  {
+    question: "What does the '===' operator in JavaScript do?",
+    choices: ["Assigns a value to a variable", "Compares values for equality without type coercion", "Performs bitwise XOR operation", " Checks if a variable is defined"],
+    answer: "Compares values for equality without type coercion",
+  },
+  {
+    question: " What is the purpose of the 'return' statement in a function?",
+    choices: ["To print a value to the console", "To declare a variable", "To exit the function and return a value", "To concatenate strings"],
+    answer: "To exit the function and return a value",
+  },
+  {
+    question: "What does the 'this' keyword refer to in JavaScript?",
+    choices: ["The global object", "The current function", "The parent object", "The variable being passed to a function"],
+    answer: "The global object",
+  }
 ];
 
 var questionIndex = 0;
@@ -46,15 +61,22 @@ function startTimer() {
       } else {
         endGame();
       }
-    }, 1000);
+    }, 1500);
   }
   
 function startGame() {
-  intro.setAttribute("class", "hide");
-  updateQuestion();
-  questions.setAttribute("class", "show");
-  timerEl.setAttribute("class", "show");
-  startTimer();
+
+ questionIndex = 0; // Reset question index
+ timer = 20; // Reset timer back to initial value
+ timerEl.textContent = timer; // Update timer display
+ intro.setAttribute("class", "hide");
+ questions.setAttribute("class", "show");
+ timerEl.setAttribute("class", "show");
+ resultEl.textContent = ""; // Clear any previous result text
+ updateQuestion();
+ startTimer();
+
+
 }
 
 function updateQuestion() {
@@ -94,18 +116,17 @@ choicesEl.addEventListener("click", function (event) {
 
     questionIndex++;
 
-    setTimeout(updateQuestion, 1500);
+    setTimeout(updateQuestion, 1000);
   }
 });
 
 startGameEl.addEventListener("click", startGame);
 
 
-
 function showSubmitScore() {
-  questions.classList.add("hide");
+  //questions.classList.add("hide");
   submitScoreEl.classList.remove("hide");
-  finalScoreEl.textContent = timer;
+  finalScoreEl.textContent = timer; // Display final score
 }
 
 function endGame() {
@@ -114,15 +135,6 @@ function endGame() {
   timerEl.textContent = "0";
   showSubmitScore();
 }
-
-
-
-
-
-
-
-
-
 
 startGameEl.addEventListener("click", startGame);
 
@@ -156,8 +168,17 @@ viewHighscoresEl.addEventListener("click", function(event) {
 });
 
 goBackEl.addEventListener("click", function() {
-  highscoresEl.classList.add("hide");
-  intro.classList.remove("hide");
+    highscoresEl.classList.add("hide"); // Hide high scores
+    intro.classList.remove("hide"); // Show the intro section
+    
+    // Reset game state
+    questionIndex = 0; // Reset to the first question
+    timer = 20; // Reset the timer to its initial value
+    timerEl.textContent = "Time: " + timer; // Update the timer display
+    questions.classList.add("hide"); // To ensure questions are hidden
+    resultEl.textContent = ""; // Clear any result message
+    choicesEl.innerHTML = ""; // Clear previous choices
+    questionEl.textContent = ""; // Clear the question text
 });
 
 clearHighscoresEl.addEventListener("click", function() {
