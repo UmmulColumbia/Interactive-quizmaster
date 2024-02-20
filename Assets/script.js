@@ -90,7 +90,7 @@ function updateQuestion() {
   resultEl.innerHTML = "";
   for (var i = 0; i < question[questionIndex].choices.length; i++) {
     var element = document.createElement("li");
-    element.textContent = question[questionIndex].choices[i];
+    element.textContent = (i + 1) + ". " + question[questionIndex].choices[i];
     choicesEl.appendChild(element);
   }
 }
@@ -109,7 +109,8 @@ choicesEl.addEventListener("click", function (event) {
   if (target.matches("li")) {
     if (target.textContent === question[questionIndex].answer) {
       resultEl.textContent = "correct";
-    } else {
+    }
+     else {
       resultEl.textContent = "incorrect";
       timer = timer - 5;
     }
