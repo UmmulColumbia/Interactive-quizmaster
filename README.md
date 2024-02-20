@@ -19,5 +19,13 @@ Test your coding knowledge with the Coding Quiz Challenge! This fun and interact
 4. If you answer incorrectly, time will be subtracted from the clock.
 5. Once the quiz is complete or time has run out, enter your initials to save your high score.
 
+## Screenshot
+![image](https://github.com/UmmulColumbia/Interactive-quizmaster/assets/156148729/ee83258c-9607-4ffb-846b-a81745a8f52e)
+
+![image](https://github.com/UmmulColumbia/Interactive-quizmaster/assets/156148729/3c23c08a-3ba0-4687-8d87-1f4eda67341a)
+
+![image](https://github.com/UmmulColumbia/Interactive-quizmaster/assets/156148729/1dd292df-6d2d-4725-b3c1-75c2ab2c9b82)
+
+
 
 Enjoy the challenge and aim for a high score!
