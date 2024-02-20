@@ -32,4 +32,4 @@ This project was created by Ummul Mukta as a demonstration of JavaScript program
 ## License
 This project is licensed under the MIT License.
 
-Enjoy the challenge and aim for a high score!
+#### Enjoy the challenge and aim for a high score!
