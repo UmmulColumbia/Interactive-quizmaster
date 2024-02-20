@@ -26,6 +26,10 @@ Test your coding knowledge with the Coding Quiz Challenge! This fun and interact
 
 ![image](https://github.com/UmmulColumbia/Interactive-quizmaster/assets/156148729/1dd292df-6d2d-4725-b3c1-75c2ab2c9b82)
 
+## Credits
+This project was created by Ummul Mukta as a demonstration of JavaScript programming skills.
 
+## License
+This project is licensed under the MIT License.
 
 Enjoy the challenge and aim for a high score!
